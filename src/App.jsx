@@ -69,49 +69,35 @@ function App() {
 
 
   return (
-    <div>
-
-      <h1>Hello {userName}</h1>
+    <div className="flex flex-col min-h-screen items-center px-4 py-12 bg-[#0d1117]">
+      <div className= "w-full max-w-4xl">
+        <div className="text-center mb-8">
+  <h1 className="text-2xl font-semibold text-[#e6edf3]">
+    GitHub Profile Finder
+  </h1>
+  <p className="text-sm text-[#7d8590]">
+    Search any GitHub user
+  </p>
+</div>
       <SearchBar
         username = {userName}
         onChange = {handleEventChange}
         onSearch = {handleSearch}
       />
+      {loading && <p className="text-center text-sm text-[#7d8590] mt-4"> Searching...</p>}
 
-      {loading && <p> Searching...</p>}
-
-      {error && <p>{error} </p>}
+      {error && <p className="text-center text-sm text-red-400 mt-4">{error} </p>}
       {userData && (
-        <div>
-          {/* <h2>{userData.name}</h2>
-          <img src ={userData.avatar_url} alt="avatar" width={200} />
-          <p>{userData.bio}</p>
-          <p>{userData.public_repos} public repositories</p> */}
-
-
+        <div className="mt-6">
           <UserProfile 
             user = {userData}
           />  
-
-
-          {/* {repos.map((repo) => (
-          <div key={repo.id}>
-            <h3>{repo.name}</h3>
-            <p>{repo.description}</p>
-            <p>⭐ {repo.stargazers_count}</p>
-          </div>
-        ))} */}
-
-
         <RepoList
           repos = {repos}
         />
-
         </div>
-
-        
-
       )}
+      </div>
     </div>
   )
 }
