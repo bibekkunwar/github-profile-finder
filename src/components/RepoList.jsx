@@ -16,7 +16,7 @@ function RepoList({ repos }) {
         >
           <div className="flex-1 mr-4">
             <p className="text-sm font-medium text-[#58a6ff] mb-1">{repo.name}</p>
-            <p className="text-xs text-[#7d8590]">{repo.description}</p>
+           {repo.description &&  <p className="text-xs text-[#7d8590]">{repo.description}</p>}
           </div>
 
           <div className="flex items-center gap-1 text-xs text-[#7d8590] shrink-0">

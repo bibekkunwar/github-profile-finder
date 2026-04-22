@@ -1,12 +1,13 @@
 function SearchBar({ username, onChange, onSearch }) {
 
   // Handle the "Enter" key press to trigger the search
-  function handleKeyDown(event) {
-    if (event.key === 'Enter') {
+  function handleKeyDown(e) {
+    if (e.key === 'Enter') {
       onSearch();
     }
   }
   return (
+    <div>
     <div className="flex gap-2">
       <input
         onChange={onChange}
@@ -20,6 +21,12 @@ function SearchBar({ username, onChange, onSearch }) {
       >
       Search
       </button>
+
+     
+    </div>
+     <p className="text-xl text-center m-8 text-[#7d8590]">
+    Enter a GitHub username to explore their profile and repositories
+</p>
     </div>
   );
 }

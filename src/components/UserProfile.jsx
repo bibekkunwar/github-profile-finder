@@ -11,7 +11,7 @@ function UserProfile({ user }) {
         <div className="flex-1">
           <h2 className="text-2xl font-semibold text-[#e6edf3]">{user.name}</h2>
           <p className="text-base text-[#238636] mb-2">{user.login}</p>
-          <p className="text-base text-[#7d8590] mb-3">{user.bio}</p>
+          {user.bio && <p className="text-base text-[#7d8590] mb-3">{user.bio}</p>}
         </div>
 
         <div className="flex gap-6">
